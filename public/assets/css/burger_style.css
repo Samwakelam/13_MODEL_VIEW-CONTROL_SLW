@@ -1,0 +1,94 @@
+/*Body Border */
+
+html {
+  border:5px solid black;
+  min-height: 100vh;
+}
+
+body {
+  background-image: url(../img/woodeffect.jpg);
+  background-repeat: repeat;
+ 
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* text styling */
+
+h1 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 8em;
+  text-align: center;
+  margin: 80px 0;
+}
+
+h2 {
+  font-family: 'Comfortaa', cursive;
+  font-size: 4em;
+  text-align: center;
+  margin: 15px 0;
+}
+
+input.form-control, form>div>button.btn {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5em;
+}
+
+li {
+  font-family: 'Comfortaa', cursive;
+  font-size: 1.5em;
+}
+
+
+
+/* column styling */
+
+.row{
+  max-width: 100%;
+  margin: 0;
+}
+
+.col-3 {
+  /* border: 2px solid red; */
+}
+
+.col-6 {
+  /* border: 2px solid green; */
+}
+
+/* section styling */
+
+img {
+  width: 100%;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.hide {
+  display: none;
+}
+
+div.mb-3{
+  margin: 10px auto; 
+  width: 80%;
+}
+
+input#burger-name {
+  color: red;
+  margin: 10px 0;
+  border: 5px solid black;
+  border-radius: 5px;
+}
+
+.btn {
+  background-color: orangered
+}
+
+/* aside styling */
+
+li {
+  margin: 10px 0;
+  border-radius: 5px;
+}

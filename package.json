@@ -1,0 +1,19 @@
+{
+  "name": "13_model_view-control_slw",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SW",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6",
+    "sequelize": "^6.3.5"
+  }
+}

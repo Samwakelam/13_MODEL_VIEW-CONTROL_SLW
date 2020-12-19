@@ -1,0 +1,12 @@
+# Hide npm files 
+node_modules
+
+# Hide database files 
+.env
+
+
+# Hide notes 
+notes
+
+# Hide test html
+public/burger.html

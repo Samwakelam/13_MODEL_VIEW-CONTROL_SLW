@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Burgers</title>
+	<link rel="icon" href="assets/img/icon.png" type="image/x-icon" />
+
+	<!-- Style sheets -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+	<link rel="stylesheet" href="assets/css/burger_style.css">
+
+	<!-- google fonts  -->
+	<link
+		href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat&family=Open+Sans&display=swap"
+		rel="stylesheet">
+
+</head>
+
+<body>
+	<h1>Burger Bar</h1>
+
+	<main class="row">
+
+		<aside id="left" class="col-3">
+			<ul id="burgers-to-eat" class="list-group">
+
+				{{toEat}}
+
+			</ul>
+		</aside>
+
+		<section id="centre" class="col-6">
+			<img src="assets/img/burgerbar.jpg" alt="Burger Bar">
+			<h2>Create a burger</h2>
+			<form>
+				<div class="mb-3">
+					<lable for="burger-name" class="form-label hide">Burger Name</lable>
+					<input type="text" id="burger-name" class="form-control" name="burger-name"
+						placeholder="Enter a burger name..." aria-labelledby />
+					<input type="submit" class="btn" value="Submit" />
+				</div>
+			</form>
+		</section>
+
+		<aside id="right" class="col-3">
+			<ul id="burgers-eaten" class="list-group">
+
+				{{eaten}}
+				
+			</ul>
+		</aside>
+	</main>
+
+
+
+</body>
+
+</html>
