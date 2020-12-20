@@ -2,12 +2,13 @@
 
 
 const mysql = require('mysql'); 
-const { router } = require('../controllers/burgers_controller');
+// const { router } = require('../controllers/burgers_controller');
 require('dotenv').config();
 
 const con = mysql.createConnection({
 	host: process.env.HOST,
-	port: process.env.PORT,
+	// cant call database on same port as the server
+	port: 3306,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
 	database: process.env.DATABASE,
@@ -15,11 +16,14 @@ const con = mysql.createConnection({
 
 // const databaseConnection = () => {
 	con.connect(function (err) {
-		if (err) throw err;
-		// console.log("database connected");
+		if (err) {
+			console.log("Error connection.js");
+			throw err;
+		}
+		
+		return console.log("database connected");
 	});
-	return console.log("database connected");
-// }
+
 // make sure orm functions run on specific connection 
 
 

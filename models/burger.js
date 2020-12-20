@@ -1,14 +1,21 @@
 // create the code that will call the ORM functions using burger specific input for the ORM.
 
-const  selectAll = require('../config/orm');
+const orm = require('../config/orm');
 
 
 //what is this? 
-const Burger = {
-  getAll: function(callback){selectAll(function(response){
-    callback(response);
-  })}
-} 
+// its creating an obkect with selectAll as the key and calling a callback function for the value
+const Burger = 
+  {
+    selectAll: function (callback) {
+      console.log("orm =", orm); 
+      orm.selectAll(function (response) {
+        console.log("Burger.js page, selectAll response =", response);
+        callback(response);
+      });
+    }
+  }
+  
 
 module.exports = Burger;
 
@@ -17,7 +24,22 @@ module.exports = Burger;
 
 
 
-
+// {
+//   insertOne: function (callback) {
+//     orm(function (response) {
+//       console.log("Burger.js page, insertOne response =", response);
+//       callback(response);
+//     });
+//   }
+// }, 
+// {
+//   updateOne: function (callback) {
+//     orm(function (response) {
+//       console.log("Burger.js page, updateOne response =", response);
+//       callback(response);
+//     });
+//   }
+// }
 
 
 

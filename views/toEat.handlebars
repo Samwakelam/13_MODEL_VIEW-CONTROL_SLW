@@ -1,0 +1,12 @@
+{{! generates the burger unordered list for the available burgers Not yet devouerd. }}
+
+<ul id="burgers-to-eat" class="list-group">
+	{{#each burger}}
+		{{#unless this.devoured}}
+			<li class="list-group-item d-flex justify-content-between align-items-center">
+				{{this.id}}. {{this.burger_name}}
+				<button class="eat-me btn right"> Eat Me</button>
+			</li>
+		{{/unless}}
+	{{/each}}
+</ul>

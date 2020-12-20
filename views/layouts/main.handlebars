@@ -23,28 +23,28 @@
 	<main class="row">
 
 		<aside id="left" class="col-3">
-			<ul id="burgers-to-eat" class="list-group">
+			
 
-				{{toEat}}
+				{{{body}}}
 
-			</ul>
+			
 		</aside>
 
 		<section id="centre" class="col-6">
 			<img src="assets/img/burgerbar.jpg" alt="Burger Bar">
 			<h2>Create a burger</h2>
-			<form>
+			<form id="new-burger-form">
 				<div class="mb-3">
 					<lable for="burger-name" class="form-label hide">Burger Name</lable>
 					<input type="text" id="burger-name" class="form-control" name="burger-name"
 						placeholder="Enter a burger name..." aria-labelledby />
-					<input type="submit" class="btn" value="Submit" />
+					<button id="submit-form" type="submit" class="btn" value="Submit" >Submit</button>
 				</div>
 			</form>
 		</section>
 
 		<aside id="right" class="col-3">
-			<ul id="burgers-eaten" class="list-group">
+			<ul id="burgers-eaten" class="list-group"></ul>
 
 				{{eaten}}
 				
@@ -52,7 +52,15 @@
 		</aside>
 	</main>
 
+	<!-- jQuery CDN -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+	</script>
 
+	<!-- Bootstrap CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+	<!-- My script -->
+	<script src="assets/js/script.js"></script>
 
 </body>
 
