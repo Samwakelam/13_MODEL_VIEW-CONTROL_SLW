@@ -41,7 +41,7 @@ router.put("/api/burger:id", function(req, res){
 });
 
 router.get('/', function (req, res) {
-  res.render('./views/layouts/main');
+  res.render('toEat');
 });
 
 // routes are going to use your model 
