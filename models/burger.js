@@ -5,19 +5,59 @@ const orm = require('../config/orm');
 
 //what is this? 
 // its creating an obkect with selectAll as the key and calling a callback function for the value
-const Burger = 
-  {
-    selectAll: function (callback) {
-      console.log("orm =", orm); 
-      orm.selectAll(function (response) {
-        console.log("Burger.js page, selectAll response =", response);
-        callback(response);
-      });
-    }
-  }
+
+// --- allBurger --------------------------------------------------------------------
+// this is the Model of the instance burger
+// select ALL burgers 
+// orm comes in from the orm file which is the SQL requests to the database. Using the select all function inside the file. 
+// in orm - selectAll(callback){...}
+// -----------------------------------------------------------------------------------
+const selectAll = (callback) => {
+   // console.log("what is orm? =", orm); 
+  orm.selectAll(function (response) {
+    // console.log("Burger.js page, selectAll response =", response);
+    callback(response);
+    // response is the result of the 'callback' parameter in the orm.js file 
+    // here the callback parameter does the same and passes the response param to the function that called this.
+    // burgers_controller.js
+  });
+}
   
 
-module.exports = Burger;
+const insertOne = (fields, callback) => {
+  // console.log("calling insertOne fields =", fields); 
+
+  orm.insertOne(fields, function(response){
+    // console.log("Burger.js page, insertOne response =", response);
+    callback(response);
+
+  });
+}
+
+const updateOne = (fields, callback) => {
+  console.log("calling updateOne fields =", fields); 
+
+  orm.updateOne(fields, function(response){
+    console.log("Burger.js page, updateOne response =", response);
+    callback(response);
+
+  });
+}
+  
+
+  
+
+// module.exports = {
+//   allBurger,
+//   insertBurger,
+// }
+
+exports.selectAll = selectAll; 
+exports.insertOne = insertOne; 
+exports.updateOne = updateOne; 
+
+
+
 
 
 
