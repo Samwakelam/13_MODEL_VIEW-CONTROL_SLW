@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 
 // set up middleware
-app.use(express.static('public'));
+app.use(express.static('public/'));
 
 // sets up the express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));

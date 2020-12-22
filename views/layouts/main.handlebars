@@ -8,7 +8,7 @@
 	<!-- Style sheets -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
-	<link rel="stylesheet" href="assets/css/burger_style.css">
+	<link rel="stylesheet" type="text/css"  href="assets/css/burger_style.css"> 
 
 	<!-- google fonts  -->
 	<link
@@ -22,34 +22,8 @@
 
 	<main class="row">
 
-		<aside id="left" class="col-3">
-			
-
-				{{{body}}}
-
-			
-		</aside>
-
-		<section id="centre" class="col-6">
-			<img src="assets/img/burgerbar.jpg" alt="Burger Bar">
-			<h2>Create a burger</h2>
-			<form id="new-burger-form">
-				<div class="mb-3">
-					<lable for="burger-name" class="form-label hide">Burger Name</lable>
-					<input type="text" id="burger-name" class="form-control" name="burger-name"
-						placeholder="Enter a burger name..." aria-labelledby />
-					<button id="submit-form" type="submit" class="btn" value="Submit" >Submit</button>
-				</div>
-			</form>
-		</section>
-
-		<aside id="right" class="col-3">
-			<ul id="burgers-eaten" class="list-group"></ul>
-
-				{{eaten}}
-				
-			</ul>
-		</aside>
+		{{{body}}}
+		
 	</main>
 
 	<!-- jQuery CDN -->

@@ -1,14 +1,7 @@
 <aside id="left" class="col-3">
 	<ul id="burgers-to-eat" class="list-group">
-		{{! generates the burger unordered list for the available burgers Not yet devouerd. }}
-		{{#each burger}}
-		{{#unless this.devoured}}
-		<li class="list-group-item d-flex justify-content-between align-items-center">
-			{{this.id}}. {{this.burger_name}}
-			<button class="eat-me btn right"> Eat Me</button>
-		</li>
-		{{/unless}}
-		{{/each}}
+
+
 
 	</ul>
 </aside>
@@ -29,13 +22,7 @@
 <aside id="right" class="col-3">
 	<ul id="burgers-eaten" class="list-group">
 
-		{{#each burger}}
-		{{#if this.devoured}}
-		<li class="list-group-item d-flex justify-content-between align-items-center">
-			{{this.id}}. {{this.burger_name}}
-		</li>
-		{{/if}}
-		{{/each}}
+
 
 	</ul>
 </aside>
