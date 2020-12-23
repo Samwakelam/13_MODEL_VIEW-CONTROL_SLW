@@ -111,4 +111,4 @@ Design by Samantha Wakelam, please respect copyright 2020.
 
 * Name: Samantha Wakelam  <br />Email: sam.wakelam@hotmail.co.uk <br />Github Profile: Sam Wakelam 
 
-    There is a link to the project on my portfolio page, please [check it out]().
+    There is a link to the project on my portfolio page, please [check it out](https://samwakelam.github.io/08_RESPONSIVE-PORTFOLIO_SLW/web.html).
