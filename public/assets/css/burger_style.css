@@ -29,6 +29,16 @@ h2 {
   margin: 15px 0;
 }
 
+h3{
+  font-family: 'Comfortaa', cursive;
+  font-size: 3em;
+  text-align: center;
+  margin: 10px 0;
+  /* color: orangered; */
+  background-color: #ff450050;
+  border-radius: 5px;
+}
+
 input.form-control, form>div>button.btn {
   font-family: 'Comfortaa', cursive;
   font-size: 1.5em;
@@ -89,4 +99,6 @@ input#burger-name {
 li {
   margin: 10px 0;
   border-radius: 5px;
+  min-height: 64px;
 }
+

@@ -1,31 +1,26 @@
-// setup the code to connect Node to MySQL.
-
-
 const mysql = require('mysql'); 
-// const { router } = require('../controllers/burgers_controller');
 require('dotenv').config();
 
+// create connection for mysql 
 const con = mysql.createConnection({
 	host: process.env.HOST,
 	// cant call database on same port as the server
-	port: 3306,
+	port: MYSQL,
 	user: process.env.USER,
 	password: process.env.PASSWORD,
 	database: process.env.DATABASE,
 });
 
-// const databaseConnection = () => {
-	con.connect(function (err) {
-		if (err) {
-			console.log("Error connection.js");
-			throw err;
-		}
+// connect to the database
+con.connect(function (err) {
+	if (err) {
+		console.log("Error connection.js");
+		throw err;
+	}
 		
-		return console.log("database connected");
-	});
-
-// make sure orm functions run on specific connection 
+	return console.log("database connected");
+});
 
 
-module.exports = con; 
-// exports.databaseConnection = databaseConnection; 
+// export the connection 
+module.exports = con;  

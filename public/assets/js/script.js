@@ -1,29 +1,34 @@
 $(document).ready(function(){
 
-  //  get the buttons 
+  // ------------------  get the buttons ------------------
   
-  // const submitBurger = $('#submit-form');
+  // available burgers list, eat me button 
   const eatMe = $('li>button');
 
-  // get the elements
+  // -------------------- get the elements ----------------
 
   const leftAsideList = $('ul#burgers-to-eat');
   const rightAsideList = $('ul#burgers-eaten'); 
+
+  // form input entry 
   const burgerName = $('input#burger-name');
   const newBurgerForm = $('#new-burger-form'); 
 
-  // event listeners 
+  // -------------------- event listeners ----------------
 
   leftAsideList.on("click", "button", updateStatus);
-  // eatMe.on("click", "button", updateStatus);
-  // submitBurger.on("click", "button", getBurgerNameValue);
-  newBurgerForm.submit(getAndPostNewBurger);
+  newBurgerForm.submit(postNewBurger);
 
 
-  // functions 
+  // ----------------- functions --------------------------
 
+
+ // -------------------- getAvailableBurgers ---------------
+ // uses a GET ajax call to retreive burgers from the database 
+ // data base returns html to be rendered.  
+ // --------------------------------------------------------
   function getAvailableBurgers(){
-    console.log("Getting persistant data..."); 
+    // console.log("Getting persistant data..."); 
 
     $.ajax({
       type: "GET", 
@@ -36,63 +41,79 @@ $(document).ready(function(){
 
   }
 
+ // -------------------- updateStatus ------------------------
+ // uses a PUT ajax call to update burgers from the database 
+ // retreives the information from the available burgers list
+ // splits the text to get the Id and name out seperatly.
+ // Reloads the page after returned result - no error. 
+ // ---------------------------------------------------------- 
+
   function updateStatus(){
-    console.log("eat me button pressed"); 
-    console.log("$(this).parent().val() =", $(this).parent().val());
+    // console.log("eat me button pressed"); 
+    // console.log("$(this).parent().val() =", $(this).parent().val());
     const parent = $(this).parent().text().trim();
-    console.log("parent", parent); 
-    
-    const itemId = parent.slice(0,1).trim(); 
-    const itemName = parent.slice(3,(parent.length - 6)).trim();
-    const itemButton = parent.slice((parent.length - 6)).trim(); 
+    // console.log("parent", parent); 
+    const splitItem = parent.split(".");
+    // console.log("splitItem", splitItem); 
+    const itemId = splitItem[0]; 
+    const itemName = splitItem[1].slice(0,(splitItem[1].length - 6)).trim();
+    const itemButton = splitItem[1].slice((splitItem[1].length - 6)).trim(); 
     // console.log("splice results =", `'${itemId}' - '${itemName}' - '${itemButton}' `); 
 
-    const updateItem ={
+    const updateItem = {
       id: itemId,
       burger_name: itemName,
       devoured: true,
     };
 
-    console.log("updateItem =", updateItem); 
+    // console.log("updateItem =", updateItem); 
 
     $.ajax({
       type: "PUT",
       url: "/api/burgers" + updateItem.id,
-    }).then(getAvailableBurgers)
+    }).then(getAvailableBurgers).then(location.reload())
     .catch(err => {
       if (err) throw err; 
     })
-
   }
 
-  function getAndPostNewBurger(event){
+  // -------------------- PostNewBurger ------------------------
+  // uses a POST call to add burgers from the database 
+  // checks there is an entry and outputs a placeholder message if no entry received. 
+  // reloads the page 
+  // ---------------------------------------------------------- 
+
+  function postNewBurger(event){
     event.preventDefault();
     // console.log(event); 
-    console.log("Submit button has been clicked");
+    // console.log("Submit button has been clicked");
     const burgerNameBar = burgerName.val();
     
     if(burgerNameBar == ""){
       burgerName.attr("placeholder", "Please enter a burger name.");
-      console.log("Invalid Entry"); 
+      // console.log("Invalid Entry"); 
     } else {
-      console.log("burgerNameBar after else =", burgerNameBar); 
+      // console.log("burgerNameBar after else =", burgerNameBar); 
 
       const newBurger = {
         burger_name: burgerNameBar, 
       }
-      console.log("newBurger =", newBurger); 
+      // console.log("newBurger =", newBurger); 
        
+      // post request
       $.post( "/api/burger", newBurger);  
       
       // Clear the form when submitting
       burgerName.val("");
+      location.reload();
 
     }
   }
 
  
 
-  // run functions 
+  // --------------------- run functions on page load -----------------------
+  
   getAvailableBurgers();
 
 })

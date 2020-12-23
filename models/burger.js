@@ -1,15 +1,10 @@
-// create the code that will call the ORM functions using burger specific input for the ORM.
-
 const orm = require('../config/orm');
 
-
-//what is this? 
-// its creating an obkect with selectAll as the key and calling a callback function for the value
-
-// --- allBurger --------------------------------------------------------------------
-// this is the Model of the instance burger
+// --- Select All  --------------------------------------------------------------------
+// this is the Model of the instance.
 // select ALL burgers 
-// orm comes in from the orm file which is the SQL requests to the database. Using the select all function inside the file. 
+// orm comes in from the orm file which is the SQL requests to the database. 
+// Using the select all function inside the file. 
 // in orm - selectAll(callback){...}
 // -----------------------------------------------------------------------------------
 const selectAll = (callback) => {
@@ -23,7 +18,12 @@ const selectAll = (callback) => {
   });
 }
   
-
+// --- insert one --------------------------------------------------------------------
+// this is the Model of the instance.
+// orm comes in from the orm file which is the SQL requests to the database. 
+// Using the insertOne function inside the file. 
+// in orm - insertOne (callback){...}
+// -----------------------------------------------------------------------------------
 const insertOne = (fields, callback) => {
   // console.log("calling insertOne fields =", fields); 
 
@@ -34,6 +34,13 @@ const insertOne = (fields, callback) => {
   });
 }
 
+
+// --- Update one --------------------------------------------------------------------
+// this is the Model of the instance.
+// orm comes in from the orm file which is the SQL requests to the database. 
+// Using the updateOne function inside the file. 
+// in orm - UpdateOne(callback){...}
+// -----------------------------------------------------------------------------------
 const updateOne = (fields, callback) => {
   console.log("calling updateOne fields =", fields); 
 
@@ -45,42 +52,11 @@ const updateOne = (fields, callback) => {
 }
   
 
-  
 
-// module.exports = {
-//   allBurger,
-//   insertBurger,
-// }
 
 exports.selectAll = selectAll; 
 exports.insertOne = insertOne; 
 exports.updateOne = updateOne; 
-
-
-
-
-
-
-
-
-
-// {
-//   insertOne: function (callback) {
-//     orm(function (response) {
-//       console.log("Burger.js page, insertOne response =", response);
-//       callback(response);
-//     });
-//   }
-// }, 
-// {
-//   updateOne: function (callback) {
-//     orm(function (response) {
-//       console.log("Burger.js page, updateOne response =", response);
-//       callback(response);
-//     });
-//   }
-// }
-
 
 
 
