@@ -57,7 +57,7 @@ I have learnt how to use enviromental process and properties through .env to hid
 ## Usage 
 
 1. To use the application you will need to run ``` >node server ``` from your command line and open the port you are using.    
-    Alternitively there is a [Heroku link]() for you to see the application running. 
+    Alternitively there is a [Heroku link](https://model-view-control-13-slw.herokuapp.com/burgers) for you to see the application running. 
 
 2. Use the create a burger input field to name your burger. this will display to the right or in available burgers if you are in a different responsive view. 
 
