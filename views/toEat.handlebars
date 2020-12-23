@@ -1,4 +1,5 @@
-<aside id="left" class="col-3">
+<aside id="left" class="col-xl-3 order-xl-1  col-md-6 order-md-2  col-sm-12 order-sm-2">
+	<h3>Available Burgers</h3>
 	<ul id="burgers-to-eat" class="list-group">
 		{{! generates the burger unordered list for the available burgers Not yet devouerd. }}
 		{{#each burger}}
@@ -13,7 +14,7 @@
 	</ul>
 </aside>
 
-<section id="centre" class="col-6">
+<section id="centre" class="col-xl-6 order-xl-2  col-md-12 order-md-1  col-sm-12 order-sm-1">
 	<img src="assets/img/burgerbar.jpg" alt="Burger Bar">
 	<h2>Create a burger</h2>
 	<form id="new-burger-form">
@@ -26,7 +27,8 @@
 	</form>
 </section>
 
-<aside id="right" class="col-3">
+<aside id="right" class="col-xl-3 order-xl-3  col-md-6 order-md-3  col-sm-12 order-sm-3">
+	<h3>Previous Burgers</h3>
 	<ul id="burgers-eaten" class="list-group">
 
 		{{#each burger}}
