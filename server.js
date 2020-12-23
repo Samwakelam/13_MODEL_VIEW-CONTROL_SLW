@@ -2,7 +2,7 @@ const express = require('express');
 const exphbs = require('express-handlebars');
 
 const controller = require('./controllers/burgers_controller');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 const app = express();
 
 // set up middleware
