@@ -1,10 +1,11 @@
 const mysql = require('mysql'); 
 require('dotenv').config();
-
+// console.log("process.env.CLEARDB_DATABASE_URL =", process.env.CLEARDB_DATABASE_URL); 
 // create connection for mysql 
-if (process.env.CLEARDB_SILVER_URL){
-	const con = mysql.createConnection(process.env.CLEARDB_SILVER_URL)
-} else {
+// if (process.env.CLEARDB_SILVER_URL){
+// 	const con = mysql.createConnection(process.env.CLEARDB_SILVER_URL);
+
+// } else {
 
 	const con = mysql.createConnection({
 		host: process.env.HOST,
@@ -14,7 +15,7 @@ if (process.env.CLEARDB_SILVER_URL){
 		password: process.env.PASSWORD,
 		database: process.env.DATABASE,
 	});
-}
+// }
 
 // const con = mysql.createPool({
 // 	host: process.env.HOST,
