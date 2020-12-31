@@ -29,8 +29,8 @@ require('dotenv').config();
 // connect to the database
 con.connect(function (err) {
 	if (err) {
-		console.log("Error connection.js");
-		throw err;
+		console.log("Error connection.js", err);
+		// throw err;
 	}
 		
 	return console.log("database connected");
