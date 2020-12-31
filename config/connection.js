@@ -3,7 +3,7 @@ require('dotenv').config();
 
 // create connection for mysql 
 if (process.env.CLEARDB_DATABASE_URL){
-	con = mysql.createConnection(process.env.CLEARDB_SILVER)
+	con = mysql.createConnection(process.env.CLEARDB_SILVER_URL)
 } else {
 
 	const con = mysql.createConnection({
