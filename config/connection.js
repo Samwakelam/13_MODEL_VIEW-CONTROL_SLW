@@ -1,13 +1,14 @@
 const mysql = require('mysql'); 
 require('dotenv').config();
-// console.log("process.env.CLEARDB_DATABASE_URL =", process.env.CLEARDB_DATABASE_URL); 
+
 // create connection for mysql 
-// if (process.env.CLEARDB_SILVER_URL){
-// 	const con = mysql.createConnection(process.env.CLEARDB_SILVER_URL);
+let con;
+if (process.env.CLEARDB_URL){
+	con = mysql.createConnection(process.env.CLEARDB_URL);
 
-// } else {
+} else {
 
-	const con = mysql.createConnection({
+	con = mysql.createConnection({
 		host: process.env.HOST,
 		// cant call database on same port as the server
 		port: process.env.MYSQL,
@@ -15,7 +16,7 @@ require('dotenv').config();
 		password: process.env.PASSWORD,
 		database: process.env.DATABASE,
 	});
-// }
+}
 
 // const con = mysql.createPool({
 // 	host: process.env.HOST,
